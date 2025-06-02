@@ -7,12 +7,16 @@ import org.springframework.stereotype.Service;
 
 import com.employee.empDao.EmployeeDao;
 import com.employee.empEntity.Employee;
+import com.employee.empRepository.EmployeeRepository;
 
 @Service
 public class EmployeeService {
 
 	@Autowired
 	EmployeeDao ed;
+
+	@Autowired
+	EmployeeRepository er;
 
 	// create single employee
 	public String postSingleObj(Employee e) {
@@ -47,6 +51,11 @@ public class EmployeeService {
 	// single field update by id
 	public String updateSingleField(Employee e, int b) {
 		return ed.updateSingleField(e, b);
+	}
+
+	// get all using jpqlQuery
+	public List<Employee> getAll() {
+		return er.getAll();
 	}
 
 }

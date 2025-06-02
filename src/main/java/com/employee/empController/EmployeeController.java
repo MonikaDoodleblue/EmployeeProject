@@ -64,5 +64,11 @@ public class EmployeeController {
 	public String updateSingleField(@RequestBody Employee e, @PathVariable int b) {
 		return es.updateSingleField(e, b);
 	}
+	
+	// get all using jpqlQuery
+	@GetMapping("/getAll")
+	public List<Employee> getAll() {
+		return es.getAll();
+	}
 
 }
