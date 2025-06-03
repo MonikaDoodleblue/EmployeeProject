@@ -58,4 +58,9 @@ public class EmployeeService {
 		return er.getAll();
 	}
 
+	// get only name
+	public List<String> getOnlyName() {
+		return er.getOnlyName();
+	}
+
 }

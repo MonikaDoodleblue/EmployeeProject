@@ -12,4 +12,7 @@ public interface EmployeeRepository extends JpaRepository<Employee, Integer> {
 	@Query("select e from Employee e")
 	public List<Employee> getAll();
 
+	@Query("select e.name from Employee e")
+	public List<String> getOnlyName();
+
 }
